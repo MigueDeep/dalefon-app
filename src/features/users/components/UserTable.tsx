@@ -19,6 +19,7 @@ import AddIcon from "@mui/icons-material/Add";
 import { User, UserValues } from "../models/userModel";
 import UserService from "../service/userService";
 import { UserModal } from "./UserModal";
+import { alertService } from "@services/alertService";
 
 export const UserTable = () => {
   const [users, setUsers] = useState<User[]>([]);
@@ -40,15 +41,24 @@ export const UserTable = () => {
   };
 
   const deleteUser = async (id: number) => {
+    const confirmed = await alertService.confirm(
+      "Esta acción no se puede deshacer.",
+      "¿Estás seguro de eliminar este usuario?"
+    );
+
+    if (!confirmed) return;
+
     try {
       await UserService.deleteUserById(id);
       const updated = users.filter((user) => user.id !== id);
       setUsers(updated);
       setFilteredUsers(updated);
+      alertService.success("Usuario eliminado correctamente.");
     } catch (error) {
-      console.error("Error deleting user:", error);
+      alertService.error("Error al eliminar el usuario.");
     }
   };
+
 
   const generateFakeId = () => Math.floor(Math.random() * 900) + 100;
 
@@ -57,11 +67,11 @@ export const UserTable = () => {
       const updated = users.map((u) =>
         u.id === userToEdit.id
           ? {
-              ...u,
-              name: data.fullname,
-              username: data.username,
-              email: data.email,
-            }
+            ...u,
+            name: data.fullname,
+            username: data.username,
+            email: data.email,
+          }
           : u
       );
       await UserService.updateUser(userToEdit);

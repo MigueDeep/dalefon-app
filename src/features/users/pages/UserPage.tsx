@@ -9,12 +9,19 @@ import {
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import { UserTable } from "../components/UserTable";
 import { useRouterHandler } from "@hooks/useRouterHandler";
+import { alertService } from "@services/alertService";
 
 export const UserPage = () => {
 
   const goTo = useRouterHandler();
 
-  const closeSession = () => {
+  const closeSession = async () => {
+    const confirmed = await alertService.confirm(
+      "Cerrar sesión",
+      "¿Estás seguro de que quieres cerrar sesión?"
+    );
+
+    if (!confirmed) return;
     localStorage.removeItem("token");
     goTo("/login");
   };

@@ -19,26 +19,27 @@ export const LoginForm = () => {
 
   const goTo = useRouterHandler();
 
- const handleLogin: SubmitHandler<LoginValues> = (data) => {
-  setLoading(true);
+  const handleLogin: SubmitHandler<LoginValues> = (data) => {
+    
+    setLoading(true);
 
-  const user = mockUsers.find(
-    (u) => u.email === data.email && u.password === data.password
-  );
+    const user = mockUsers.find(
+      (u) => u.email === data.email && u.password === data.password
+    );
 
-  setTimeout(() => {
-    setLoading(false);
+    setTimeout(() => {
+      setLoading(false);
 
-    if (!user) {
-      toast.error("Credenciales inválidas");
-      return;
-    }
+      if (!user) {
+        toast.error("Credenciales inválidas");
+        return;
+      }
 
-    localStorage.setItem("token", "fake-jwt-token");
-    toast.success("Bienvenido " + user.name);
-    goTo("/users");
-  }, 1000);
-};
+      localStorage.setItem("token", "fake-jwt-token");
+      toast.success("Bienvenido " + user.name);
+      goTo("/users");
+    }, 1000);
+  };
 
   return (
     <Card sx={{ maxWidth: 400, width: "100%", boxShadow: 4, p: 2 }}>

@@ -30,6 +30,7 @@
       "@config/*": ["src/config/*"],
       "@hooks/*": ["src/hooks/*"],
       "@features/*": ["src/features/*"],
+      "@services/*": ["src/services/*"],
       ///"@models/*": ["src/models/*"],
       ///"@utils/*": ["src/utils/*"],
     }

@@ -12,6 +12,7 @@ export default defineConfig({
       '@config': path.resolve(__dirname, 'src/config'),
       '@hooks': path.resolve(__dirname, 'src/hooks'),
       '@features': path.resolve(__dirname, 'src/features'),
+      '@services': path.resolve(__dirname, 'src/services'),
       //"@utils": path.resolve(__dirname, 'src/utils'),
     },
   },

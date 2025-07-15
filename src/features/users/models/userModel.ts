@@ -1,8 +1,8 @@
 import {z} from 'zod';
 
 export const userSchema = z.object({
-    fullname: z.string().nonempty({message: "El nombre completo es requerido"}),
-    username: z.string().nonempty({message: "El nombre de usuario es requerido"}),
+    fullname: z.string().nonempty({message: "El nombre completo es requerido"}).min(3, {message: "El nombre completo debe tener al menos 3 caracteres"}),
+    username: z.string().nonempty({message: "El nombre de usuario es requerido"}).min(3, {message: "El nombre de usuario debe tener al menos 3 caracteres"}),
     email: z.string().nonempty({message: "El correo electrónico es requerido"}).email({message: "Correo electrónico inválido"}),
 })
 

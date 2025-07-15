@@ -2,13 +2,13 @@ export const mockUsers = [
   {
     id: 1,
     email: "admin@dalefon.com",
-    password: "admin123",
+    password: "admin1234",
     name: "Admin User",
   },
   {
     id: 2,
     email: "mike@dalefon.com",
-    password: "mike123",
+    password: "mike1234",
     name: "Mike",
   },
 ];
