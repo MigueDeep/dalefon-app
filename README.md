@@ -8,7 +8,7 @@ Este proyecto es una aplicación React que implementa un sistema **CRUD (Crear, 
 
 ## 📁 Estructura del proyecto
 
-<pre lang="markdown"> ### 📁 Estructura del Proyecto ``` src/ ├── components/ │ ├── LoginForm.tsx │ ├── UserModal.tsx │ ├── UserTable.tsx ├── models/ │ ├── userModel.ts │ └── loginModel.ts ├── service/ │ └── userService.ts ├── mocks/ │ └── mockUsers.ts ✅ (aquí están las credenciales simuladas) ├── router/ │ └── AppRouter.tsx ├── hooks/ │ └── useRouterHandler.ts ├── services/ │ └── swalService.ts ├── App.tsx └── index.tsx ``` </pre>
+<pre lang="markdown"> ``` src/ ├── components/ │ ├── LoginForm.tsx │ ├── UserModal.tsx │ ├── UserTable.tsx ├── models/ │ ├── userModel.ts │ └── loginModel.ts ├── service/ │ └── userService.ts ├── mocks/ │ └── mockUsers.ts ✅ (aquí están las credenciales simuladas) ├── router/ │ └── AppRouter.tsx ├── hooks/ │ └── useRouterHandler.ts ├── services/ │ └── swalService.ts ├── App.tsx └── index.tsx ``` </pre>
 
 ---
 
