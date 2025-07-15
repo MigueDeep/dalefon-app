@@ -6,6 +6,12 @@ Este proyecto es una aplicación React que implementa un sistema **CRUD (Crear, 
 
 ---
 
+## 📁 Estructura del proyecto
+
+<pre lang="markdown"> ### 📁 Estructura del Proyecto ``` src/ ├── components/ │ ├── LoginForm.tsx │ ├── UserModal.tsx │ ├── UserTable.tsx ├── models/ │ ├── userModel.ts │ └── loginModel.ts ├── service/ │ └── userService.ts ├── mocks/ │ └── mockUsers.ts ✅ (aquí están las credenciales simuladas) ├── router/ │ └── AppRouter.tsx ├── hooks/ │ └── useRouterHandler.ts ├── services/ │ └── swalService.ts ├── App.tsx └── index.tsx ``` </pre>
+
+---
+
 ## 🚀 Funcionalidades
 
 - ✅ **Login** con validación de credenciales usando un JSON simulado.
@@ -29,38 +35,13 @@ Este proyecto es una aplicación React que implementa un sistema **CRUD (Crear, 
 
 ---
 
-## 📁 Estructura del proyecto
-
-src/
-├── components/
-│ ├── LoginForm.tsx
-│ ├── UserModal.tsx
-│ ├── UserTable.tsx
-├── models/
-│ ├── userModel.ts
-│ └── loginModel.ts
-├── service/
-│ └── userService.ts
-├── mocks/
-│ └── mockUsers.ts ✅ (aquí están las credenciales simuladas)
-├── router/
-│ └── AppRouter.tsx
-├── hooks/
-│ └── useRouterHandler.ts
-├── service/
-│ └── swalService.ts
-├── App.tsx
-└── index.tsx
-
-
----
 
 ## ⚙️ Instalación
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/mi-crud-api-react.git
-   cd mi-crud-api-react
+   git clone https://github.com/MigueDeep/dalefon-app.git
+   cd dalefon-app
 
    npm install
 
@@ -92,18 +73,5 @@ Los usuarios creados con POST no se persisten en el backend falso, por lo que un
 El CRUD se mantiene funcional en el frontend gracias al estado (useState), simulando persistencia.
 
 
----
-
-📦 Dependencias principales
-
-{
-  "@mui/material": "^7.2.0",
-  "@mui/icons-material": "^7.2.0",
-  "axios": "^1.10.0",
-  "react-hook-form": "^7.60.0",
-  "zod": "^3.24.2",
-  "react-toastify": "^11.0.5",
-  "react-router-dom": "^7.6.3"
-}
 
 
